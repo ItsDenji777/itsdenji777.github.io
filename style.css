@@ -27,6 +27,7 @@ html, body {
 
 a {
 	text-decoration: none;
+	color: #0e87f9;
   }
   
 .header-bar::after {
