@@ -64,18 +64,16 @@ a {
 }
 .slider-menu > li {
 	display: inline-flex;
-	padding: 14px;
-	margin-left: 2px;
+	padding-top: 14px;
+	padding-right: 14px;
+	padding-bottom: 14px;
 	font-family: 'Quicksand', sans-serif;
 	color: #0e87f9;
 	cursor: pointer;
 	transition: 0.3s linear all;
 	user-select: none;
 }
-.slider-menu > li:hover {
-	color: #0d64b4;
-	box-shadow: 0 50px 5px rgba(0, 0, 0, 0.15) inset;
-}
+
 .aeu-signature {
 	position: fixed;
 	top: 5px;
