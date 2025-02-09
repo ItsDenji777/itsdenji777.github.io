@@ -28,6 +28,7 @@ html, body {
 a {
 	text-decoration: none;
 	color: #0e87f9;
+	background-color:transparent;
   }
   
 .header-bar::after {
