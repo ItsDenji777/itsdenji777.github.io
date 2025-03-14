@@ -1,0 +1,16 @@
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://itsdenji777.github.io/About-Me/</loc>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://itsdenji777.github.io/Projects/</loc>
+        <priority>2.0</priority>
+    </url>
+
+    <url>
+        <loc>https://itsdenji777.github.io/Contact-Me/</loc>
+        <priority>3.0</priority>
+    </url>
+</urlset>
