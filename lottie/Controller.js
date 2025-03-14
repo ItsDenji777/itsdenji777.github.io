@@ -1,12 +1,17 @@
-const animationContainer = document.getElementById('Controller')
-const animation = lottie.loadAnimation({
-    container: animationContainer,
+const animationContainer2 = document.getElementById('Controller')
+const animation2 = lottie.loadAnimation({
+    container: animationContainer2,
     renderer: 'svg',
-    loop:false,
+    loop:true,
     autoplay:false,
     path: 'https://itsdenji777.github.io/lottie/Controller.json'
 });
 
-animationContainer.addEventListener('click', () => {
-    animation.play();
+animationContainer2.addEventListener('mouseenter', () => {
+    animation2.play();
+});
+
+
+animationContainer2.addEventListener('mouseleave', () => {
+    animation2.stop();
 });
