@@ -16,18 +16,30 @@
     <link rel="manifest" href="site.webmanifest" />
     <title data-key="web-t">Kasra Seydi - Hub</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="langdd.css">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
 </head>
     <body style="background-color: #20242b;">
       <img class="header-logo-image" height="90" width="115" src="https://itsdenji777.github.io/favicons/favicon.svg" alt="Logo">
       <h1 data-key="Name" style="margin-left: 111px;margin-top: 25px; color: aliceblue;font-family: arial; position: absolute; top: 0;">Kasra Seydi</h1>
-        <a href="#LangChanged">
-          <div
-          class="LangChanged"
-          id="langbtn" 
-          style="width: 53px;height: 53px; margin-left: 300px;margin-top: 20px;position: absolute; top: 0;"
-          ></div>
+        <div class="dropdown-container">
+          <label for="languageSelector" class="dropdown-label">🌐 Choose Your Language:</label>
+          <div class="dropdown-wrapper">
+              <select id="languageSelector" class="dropdown">
+                  <option value="fa">🇮🇷 Persian</option>
+                  <option value="en">🇺🇸 English</option>
+                  <option value="ru">🇷🇺 Russian</option>
+                  <option value="fr">🇫🇷 French</option>
+                  <option value="ar">🇸🇦 Arabic</option>
+                  <option value="pl">🇵🇱 Polish</option>
+                  <option value="ja">🇯🇵 Japanese</option>
+                  <option value="zh">🇨🇳 Chinese</option>
+              </select>
+          </div>
+      </div>
+        </div>
+
     </a>
       <div class="container">
         <p class="lead" data-key="choose">choose one of the pages below to start!</p>
@@ -45,48 +57,7 @@
             ></div>
       </a>
       </div>
-      <script src="/lottie/TI.js"></script>
-      <script src="/lottie/Controller.js"></script>
       <script src="lang.js"></script>
-    <script>
-// Function to detect or retrieve the dynamic language
-function getDynamicLanguage() {
-    // Retrieve from localStorage if available
-    let storedLang = localStorage.getItem('buttonLang');
-    if (storedLang) return storedLang;
-
-    // Fallback to browser detection if no stored language
-    let browserLang = navigator.language || navigator.userLanguage;
-    return browserLang.substring(0, 2); // Return 'fa', 'en', etc.
-}
-
-// Function to load the language JSON and update the page
-function changeLanguage(language) {
-    fetch(`${language}.json`) // Fetch the JSON file for the selected language
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Could not load ${language}.json`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            // Update all elements with data-key attributes
-            document.querySelectorAll("[data-key]").forEach(element => {
-                const key = element.getAttribute("data-key");
-                if (data[key]) {
-                    element.innerText = data[key];
-                }
-            });
-            langs = language; // Dynamically update the current language
-        })
-        .catch(error => console.error("Error loading language file:", error));
-}
-
-// Load the default language on page load
-document.addEventListener("DOMContentLoaded", function () {
-    var langs = getDynamicLanguage(); // Dynamically determine the starting language
-    changeLanguage(langs); // Load the dynamic language
-});
-      </script>
+      <script src="/lottie/Controller.js"></script>
     </body>
   </html>
