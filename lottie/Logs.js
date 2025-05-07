@@ -1,17 +1,23 @@
-window.onload = function () {
-    var animation = lottie.loadAnimation({
-        container: document.getElementById('logs'),
-        renderer: 'svg',
-        loop: false,
-        autoplay: false,
-        path: 'https://itsdenji777.github.io/lottie/Logs.json'
-    });
+document.addEventListener('DOMContentLoaded', function () {
+    var animationContainer = document.getElementById('logs');
 
-    document.getElementById('logs').addEventListener('mouseenter', function () {
-        animation.play();
-    });
+    if (animationContainer) {  // Check if the element actually exists
+        var animation = lottie.loadAnimation({
+            container: animationContainer,
+            renderer: 'svg',
+            loop: false,
+            autoplay: false,
+            path: 'https://itsdenji777.github.io/lottie/Logs.json'
+        });
 
-    document.getElementById('logs').addEventListener('mouseleave', function () {
-        animation.stop();
-    });
-};
+        animationContainer.addEventListener('mouseenter', function () {
+            animation.play();
+        });
+
+        animationContainer.addEventListener('mouseleave', function () {
+            animation.stop();
+        });
+    } else {
+        console.error("Element #logs not found. Double-check the HTML!");
+    }
+});
