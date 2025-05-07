@@ -14,12 +14,13 @@ document.addEventListener('DOMContentLoaded', function () {
         animation.goToAndStop(defaultFrame, true); // Set initial state
 
         animationContainer.addEventListener('mouseenter', function () {
+            animation.stop(); // Make sure it's stopped before playing
             animation.play();
         });
 
         animationContainer.addEventListener('mouseleave', function () {
-            var currentFrame = animation.currentFrame; // Get current frame
-            animation.playSegments([currentFrame, defaultFrame], true); // Reverse to default frame
+            animation.stop(); // Stop first to avoid conflicts
+            animation.playSegments([animation.currentFrame, defaultFrame], true);
         });
     } else {
         console.error("Element #logs not found. Double-check the HTML!");
