@@ -10,18 +10,28 @@ document.addEventListener('DOMContentLoaded', function () {
             path: 'https://itsdenji777.github.io/lottie/Logs.json'
         });
 
-        var defaultFrame = 20; // Set the default frame number
-        animation.goToAndStop(defaultFrame, true); // Set initial state
+        var defaultFrame = 12;
+        var hoverFrame = 60;
 
-        animationContainer.addEventListener('mouseenter', function () {
-            animation.stop(); // Make sure it's stopped before playing
-            animation.play();
-        });
+        animation.goToAndStop(defaultFrame, true); // Set default state
 
-        animationContainer.addEventListener('mouseleave', function () {
-            animation.stop(); // Stop first to avoid conflicts
-            animation.playSegments([animation.currentFrame, defaultFrame], true);
-        });
+        // Check if the device has touch support
+        function isTouchDevice() {
+            return ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+        }
+
+        if (isTouchDevice()) {
+            animation.playSegments([defaultFrame, hoverFrame], true); // Auto-hover effect on touch devices
+        } else {
+            // Normal hover events for non-touch devices
+            animationContainer.addEventListener('mouseenter', function () {
+                animation.playSegments([defaultFrame, hoverFrame], true);
+            });
+
+            animationContainer.addEventListener('mouseleave', function () {
+                animation.playSegments([hoverFrame, defaultFrame], true);
+            });
+        }
     } else {
         console.error("Element #logs not found. Double-check the HTML!");
     }
