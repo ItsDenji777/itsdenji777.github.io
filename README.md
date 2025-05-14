@@ -10,7 +10,7 @@ Where you can download/buy my projects.
 # [Contact Me](https://itsdenji777.github.io/Contact-Me)
 Ways to contact me are all on this page.
 
-# [DevLog](https://itsdenji777.github.io/Games)
+# [Games](https://itsdenji777.github.io/Games)
 i have put the games i made so you can download,buy or play them!
 
 # [DevLog](https://itsdenji777.github.io/DevLog)
