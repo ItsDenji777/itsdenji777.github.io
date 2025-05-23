@@ -57,15 +57,6 @@
 }
 
 
-/* Dropdown option styling */
-.dropdown option {
-    font-size: 14px;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: #121212;
-    transition: background-color 0.3s, color 0.3s;
-}
-
 /* Hover effect for options */
 .dropdown option:hover {
     background-color: #0e87f9;
