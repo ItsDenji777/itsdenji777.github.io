@@ -17,19 +17,24 @@ document.addEventListener("DOMContentLoaded", function () {
                 return response.json();
             })
             .then(data => {
-                document.querySelectorAll("[data-key]").forEach(element => {
-                    element.style.transition = "opacity 0.6s ease"; // Apply fade transition
-                    element.style.opacity = "0"; // Fade out
+    document.querySelectorAll("[data-key]").forEach(element => {
+        const key = element.getAttribute("data-key");
+        const newText = data[key];
+        if (!newText) return;
 
-                    setTimeout(() => {
-                        const key = element.getAttribute("data-key");
-                        if (data[key]) {
-                            element.innerText = data[key]; // Update text content
-                        }
-                        element.style.opacity = "1"; // Fade back in with new text
-                    }, 600);
-                });
-            })
+        if (element.tagName.toLowerCase() === 'title') {
+            document.title = newText; // set the document title directly
+        } else {
+            element.style.transition = "opacity 0.6s ease";
+            element.style.opacity = "0";
+            setTimeout(() => {
+                element.innerText = newText;
+                element.style.opacity = "1";
+            }, 600);
+        }
+    });
+})
+
             .catch(error => console.error("Error loading language file:", error));
     }
 
